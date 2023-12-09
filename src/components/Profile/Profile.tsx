@@ -18,7 +18,7 @@ const Profile = () => {
   const { data: session } = useSession();
   const names = session?.user?.name?.split(" ") as Array<string>;
   const firstName = names ? names[0] : "";
-  const lastName = names.length > 1 ? names[names.length - 1] : "";
+  const lastName = names?.length > 1 ? names[names.length - 1] : "";
   const [formData, setFormData] = useState({
     firstName: firstName,
     lastName: lastName,
